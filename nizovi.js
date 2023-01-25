@@ -35,6 +35,96 @@ for(let i = 0; i < nizBrojeva.length; i++){
 
 
 
+// Збир бројева у низу
+
+let nizZadatak = [2,3,5,7,9,12,14,16,17,"ne-racunati-string",18,20,21,23,25,26,27]
+
+let zbirBrojeva = 0
+
+for (let i = 0; i < nizZadatak.length; i++){
+
+    if(typeof nizZadatak[i] === 'number'){
+        zbirBrojeva += nizZadatak[i]
+        console.log(i, nizZadatak[i], zbirBrojeva)
+    }
+}
+
+
+// Из низа извући
+{
+    let niz2Brojeva = [1,2,3,4,24,25,123,566,78,23]
+    let nizDeljivih = []
+
+    nizDeljivih.push(niz2Brojeva[0]) //  push - Убацује у низ, на крај низа, али када се конзол-логује враћа онај нови број колико има чинилаца у низу као .length - тај број
+    nizDeljivih.push(niz2Brojeva[1])
+    nizDeljivih.push(niz2Brojeva[2])
+    nizDeljivih.push(niz2Brojeva[3]) 
+
+    nizDeljivih.unshift(niz2Brojeva[7]) // Убацује на почетак низа
+
+
+
+    console.log(niz2Brojeva,nizDeljivih)
+}
+
+console.log("А сада испод наша направљена функција push")
+
+
+    //  .push , додаје елемент на крај низа, враћа нову дужину низа
+
+function push(arr,el){
+    if(Array.isArray(arr)){ // може без овог реда основна варијанта
+        arr[arr.length] = el
+        return arr.length
+    }                       // може без овог реда основна варијанта
+    return -1 // Конвенција за грешку , // може без овог реда основна варијанта
+}
+
+    let noviNiz = [1,2,3,4]
+
+    console.log(noviNiz)
+
+    console.log("А сада испод додат нови елемент нашом функцијом push")
+
+
+
+    push(noviNiz,5)
+
+    console.log(noviNiz)
+
+
+    //  .unshift , додаје елемент на почетак низа, враћа такође као и push нову дужину низа
+
+
+
+    
+
+    /// niz.reduce((total,curr) => total + curr, 0) Сабере све бројеве у низу и да један број као резултат, понаша се као петља, 0 на крају је у ствари почетна вредност тотала, curr представља тренутни елемент у низу који сабира са тоталом као тотал += елемент се понаша, функција за сабирање елемената у низу
+
+let nizRed = [5,234,6,2,-23,34]
+
+console.log(nizRed.reduce((total,curr) => total + curr, 0))
+
+// Или мала промена кода и ето нама промене као са if
+
+console.log(nizRed.reduce((total,curr) => curr % 2 == 0 ? total + curr : total,0))
+
+
+
+
+
+// .forEach(el => {........}) понаша се као петља
+
+nizRed.forEach(el => {
+    console.log(el)
+})
+
+// Овај код горе и овај код доле су исти
+
+for(let i = 0; i < nizRed.length; i++){
+    console.log(nizRed[i])
+}
+
 
 
 
